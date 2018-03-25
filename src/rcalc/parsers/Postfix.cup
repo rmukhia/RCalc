@@ -1,0 +1,54 @@
+/* ------------------------------------------------------------------------------------ */
+/* User code                                                                            */
+/* ------------------------------------------------------------------------------------ */
+
+package rcalc.parsers;
+
+import rcalc.lexer.Token;
+import rcalc.parsers.terminals.*;
+import rcalc.parsers.nonterminals.*;
+
+
+/* ------------------------------------------------------------------------------------ */
+/* Grammar symbol declarations                                                          */
+/* ------------------------------------------------------------------------------------ */
+
+terminal        Token               PLUS, MINUS, MULTIPLY, DIVIDE, EXP, LPAREN, RPAREN;
+terminal        Token               NUMBER;
+
+non terminal    STARTNode           START;          /* Start Node */
+non terminal    TERMNode            TERM;           /* Term */
+non terminal    FACTORNode          FACTOR;            /* Number */
+non terminal    NUMNode             NUM;            /* Number */
+
+
+start with START;
+
+/* ------------------------------------------------------------------------------------ */
+/* Grammar rules                                                                        */
+/* ------------------------------------------------------------------------------------ */
+
+START       ::= TERM:l
+                    {: RESULT = new STARTNode(l); :};
+
+TERM        ::= TERM:l TERM:r PLUS:m
+                    {: RESULT = new TERMNode(l, new PlusNode(m), r); :}
+              | TERM:l TERM:r MINUS:m
+                    {: RESULT = new TERMNode(l, new MinusNode(m), r); :}
+              | TERM:l TERM:r MULTIPLY:m
+                    {: RESULT = new TERMNode(l, new MultiplyNode(m), r); :}
+              | TERM:l TERM:r DIVIDE:m
+                    {: RESULT = new TERMNode(l, new DivideNode(m), r); :}
+              | TERM:l TERM:r EXP:m
+                    {: RESULT = new TERMNode(l, new ExponentNode(m), r); :}
+              | LPAREN:l TERM:r MINUS:m RPAREN:rp
+                    {: RESULT = new TERMNode(new LParenNode(l), new MinusNode(m), r, new RParenNode(rp)); :}
+              | FACTOR:l
+                    {: RESULT = new TERMNode(l); :};
+
+FACTOR      ::= NUM:l
+                    {: RESULT = new FACTORNode(l); :};
+
+NUM         ::= NUMBER:l
+                    {: RESULT = new NUMNode(new NumberNode(l)); :};
+

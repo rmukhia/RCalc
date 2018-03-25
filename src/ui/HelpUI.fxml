@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Label layoutX="27.0" layoutY="14.0" text="RCalc">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="140.0" layoutY="36.0" text="v0.1" />
+            <Label layoutX="491.0" layoutY="369.0" text="Raunak Mukhia" />
+            <Label layoutX="106.0" layoutY="96.0" text="A simple calculator." wrapText="true" />
+            <Label layoutX="106.0" layoutY="113.0" text="Evaluates and translates Infix, Prefix and Postfix expressions." />
+            <Label layoutX="106.0" layoutY="130.0" prefHeight="36.0" prefWidth="376.0" text="For Postfix and Prefix expressions, unary minus should be enclosed in brackets." wrapText="true" />
+            <Label layoutX="105.0" layoutY="175.0" text="* ( - ( - ( - 4 ) 2 ) ) 2" />
+            <Label layoutX="106.0" layoutY="192.0" prefHeight="44.0" prefWidth="376.0" text="(-4) and ( - ( - ( - 4 ) 2 ) ) are unary minus operators. It also applies to Postfix expressions." wrapText="true" />
+            <TextField editable="false" focusTraversable="false" layoutX="105.0" layoutY="300.0" prefHeight="27.0" prefWidth="252.0" text="https://github.com/rmukhia/Calculator" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

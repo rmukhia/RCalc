@@ -1,0 +1,143 @@
+/*noinspection ALL*/
+
+.container_all {
+/*     -fx-font-family: QuickSand; */
+    -fx-pref-width: 600px;
+    -fx-max-width: 600px;
+    -fx-pref-height: 635px;
+    -fx-max-height: 635px;
+    -fx-background-color: #F5F1ED;
+}
+
+.menu-bar {
+    -fx-pref-width: 600px;
+    -fx-pref-height: 30px;
+}
+
+.label-header {
+    -fx-pref-width: 600px;
+    -fx-font-size: 12px;
+    -fx-pref-height: 25px;
+    -fx-padding: 5px;
+    -fx-text-fill: #232020;
+    -fx-font-weight: 600;
+    -fx-background-color: linear-gradient(to top,#F5F1ED, #cdc9c5);
+}
+
+.label-io {
+    -fx-pref-width: 600px;
+    -fx-font-size: 14px;
+    -fx-pref-height: 50px;
+    -fx-text-fill: #232020;
+    -fx-alignment: bottom-right;
+    -fx-wrap-text: true;
+    -fx-padding: 5px;
+    -fx-border-width: 0.2px;
+    -fx-border-color: #8F97A9;
+    -fx-text-alignment: right;
+}
+
+
+
+.label-io:hover {
+    -fx-border-width: 0.2px;
+    -fx-border-color: #8F97A9;
+}
+
+
+
+.toggle_button {
+    -fx-pref-height: 40px;
+    -fx-pref-width: 150px;
+    -fx-background-radius: 0px;
+    -fx-border-width: 0.2px;
+    -fx-border-color: rgba(35, 32, 32, 1);
+    -fx-text-fill: rgba(255, 255, 255, 1);
+    -fx-font-size: 16px;
+    -fx-background-color: linear-gradient(to top, #4c926c, #59a880);
+}
+
+.toggle_button:selected {
+    -fx-background-color: #254c36;
+}
+
+.toggle_button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #4c926c, #59a880);
+}
+
+.button {
+    -fx-max-height: inherit;
+    -fx-max-width: inherit;
+
+    -fx-background-radius: 0px;
+    -fx-border-width: 0.2px;
+    -fx-border-color: rgba(35, 32, 32, 1);
+
+    -fx-text-fill: rgba(255, 255, 255, 1);
+
+    -fx-font-size: 16px;
+
+    -fx-pref-width: 100px;
+    -fx-pref-height: 40px;
+}
+
+
+.button_double_size {
+    -fx-pref-width: 200px;
+}
+
+.button_triple_size {
+    -fx-pref-width: 300px;
+}
+
+/* Red */
+.cred {
+    -fx-background-color: linear-gradient(to top, #C74908, #DA5008);
+}
+
+.cred:hover {
+    -fx-background-color: linear-gradient(to bottom, #C74908, #DA5008);
+}
+
+.cred:pressed {
+    -fx-background-color:#DA5008;
+}
+
+/* Green */
+.cgreen {
+    -fx-background-color: linear-gradient(to top, #1E9926, #21A829);
+}
+
+.cgreen:hover {
+    -fx-background-color: linear-gradient(to bottom, #1E9926, #21A829);
+}
+
+.cgreen:pressed {
+    -fx-background-color: #1E9926;
+}
+
+/* Blue */
+.cblue {
+    -fx-background-color: linear-gradient(to top,#435E89, #4C699A);
+}
+
+.cblue:hover {
+    -fx-background-color: linear-gradient(to bottom,#435E89, #4C699A);
+}
+
+.cblue:pressed {
+    -fx-background-color: #435E89;
+}
+
+/* Default button color */
+.cdefault {
+    -fx-background-color: linear-gradient(to top,#414653, #4C5261);
+}
+
+.cdefault:hover {
+    -fx-background-color: linear-gradient(to bottom,#414653, #4C5261);
+}
+
+.cdefault:pressed {
+    -fx-background-color: #414653;
+}

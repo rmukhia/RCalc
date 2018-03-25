@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.net.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane styleClass="container_all" stylesheets="@CalculatorUI.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.CalculatorUIController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="780.0" minHeight="10.0" prefHeight="780.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <FlowPane styleClass="container_all">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="menu_close" mnemonicParsing="false" onAction="#onMenuClose" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="menu_about" mnemonicParsing="false" onAction="#onMenuAbout" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label styleClass="label-header" text="Input:" />
+            <TextArea fx:id="txt_input" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" promptText="Enter Expression" styleClass="label-io" />
+            <Label styleClass="label-header" text="Infix:" />
+            <TextArea fx:id="txt_infix" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" promptText="Infix" styleClass="label-io" />
+            <Label styleClass="label-header" text="Prefix:" />
+            <TextArea fx:id="txt_prefix" focusTraversable="false" promptText="Prefix" styleClass="label-io" />
+            <Label styleClass="label-header" text="Postfix:" />
+            <TextArea fx:id="txt_postfix" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" promptText="Postfix" styleClass="label-io" />
+            <Label styleClass="label-header" text="Result:" />
+            <TextArea fx:id="txt_output" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" promptText="Result" styleClass="label-io" />
+            <Separator prefWidth="600.0" />
+            <ToggleButton fx:id="tgl_auto" mnemonicParsing="false" onAction="#onTglAuto" text="AUTO">
+               <styleClass>
+                  <String fx:value="toggle_button" />
+                  <String fx:value="color7" />
+               </styleClass>
+            </ToggleButton>
+            <ToggleButton fx:id="tgl_infix" mnemonicParsing="false" onAction="#onTglInfix" text="INFIX">
+               <styleClass>
+                  <String fx:value="toggle_button" />
+                  <String fx:value="color7" />
+               </styleClass>
+            </ToggleButton>
+            <ToggleButton fx:id="tgl_prefix" mnemonicParsing="false" onAction="#onTglPrefix" text="PREFIX">
+               <styleClass>
+                  <String fx:value="toggle_button" />
+                  <String fx:value="color7" />
+               </styleClass>
+            </ToggleButton>
+            <ToggleButton fx:id="tgl_postfix" mnemonicParsing="false" onAction="#onTglPostfix" text="POSTFIX">
+               <styleClass>
+                  <String fx:value="color7" />
+                  <String fx:value="toggle_button" />
+               </styleClass>
+            </ToggleButton>
+            <Button fx:id="btn_7" mnemonicParsing="false" onAction="#on7" styleClass="cdefault" text="7" />
+            <Button fx:id="btn_8" mnemonicParsing="false" onAction="#on8" styleClass="cdefault" text="8" />
+            <Button fx:id="btn_9" mnemonicParsing="false" onAction="#on9" styleClass="cdefault" text="9" />
+            <Button fx:id="btn_open_bracket" mnemonicParsing="false" onAction="#onOpenBracket" styleClass="cblue" text="(" />
+            <Button fx:id="btn_close_bracket" mnemonicParsing="false" onAction="#onCloseBracket" styleClass="cblue" text=")" />
+            <Button fx:id="btn_ac" mnemonicParsing="false" onAction="#onAC" styleClass="cdefault" text="AC" />
+            <Button fx:id="btn_4" mnemonicParsing="false" onAction="#on4" styleClass="cdefault" text="4" />
+            <Button fx:id="btn_5" mnemonicParsing="false" onAction="#on5" styleClass="cdefault" text="5" />
+            <Button fx:id="btn_6" mnemonicParsing="false" onAction="#on6" styleClass="cdefault" text="6" />
+            <Button fx:id="btn_multiply" mnemonicParsing="false" onAction="#onMultiply" styleClass="cblue" text="× " />
+            <Button fx:id="btn_divide" mnemonicParsing="false" onAction="#onDivide" styleClass="cblue" text="÷" />
+            <Button fx:id="btn_delete" mnemonicParsing="false" onAction="#onDelete" styleClass="cdefault" text="DEL" />
+            <Button fx:id="btn_1" mnemonicParsing="false" onAction="#on1" styleClass="cdefault" text="1" />
+            <Button fx:id="btn_2" mnemonicParsing="false" onAction="#on2" styleClass="cdefault" text="2" />
+            <Button fx:id="btn_3" mnemonicParsing="false" onAction="#on3" styleClass="cdefault" text="3" />
+            <Button fx:id="btn_plus" mnemonicParsing="false" onAction="#onPlus" styleClass="cblue" text="+" />
+            <Button fx:id="btn_minus" mnemonicParsing="false" onAction="#onMinus" styleClass="cblue" text="-" />
+            <Button fx:id="btn_space" mnemonicParsing="false" onAction="#onSpace" styleClass="cdefault" text="SPACE" />
+            <Button fx:id="btn_0" mnemonicParsing="false" onAction="#on0" styleClass="cdefault" text="0" />
+            <Button fx:id="btn_e" mnemonicParsing="false" onAction="#onExponential" styleClass="cdefault" text="E" />
+            <Button fx:id="btn_point" mnemonicParsing="false" onAction="#onPoint" styleClass="cdefault" text="." />
+            <Button fx:id="btn_equal" mnemonicParsing="false" onAction="#onEqual" text="=">
+               <styleClass>
+                  <String fx:value="cgreen" />
+                  <String fx:value="button_triple_size" />
+               </styleClass></Button>
+         </children>
+      </FlowPane>
+   </children>
+</GridPane>
